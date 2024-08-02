@@ -61,12 +61,16 @@ body {
   border-radius: 8px;
   background: url("../img/background.png");
   color: #ffffff;
-  animation: slideDown 1s ease-out;
   visibility: visible;
 }
+.dialog:not([data-is-first-access=true]) {
+  animation: slideDown 1s ease-out;
+}
 .dialog:not([open]) {
-  animation: slideUp 600ms ease-in;
   translate: 0 -1000px;
+}
+.dialog:not([open]):not([data-is-first-access=true]) {
+  animation: slideUp 600ms ease-in;
 }
 .dialog::backdrop {
   background-color: rgba(255, 255, 255, 0.2);

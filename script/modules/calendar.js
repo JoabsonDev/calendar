@@ -204,6 +204,7 @@ export class Calendar {
         if (document.querySelector(".dialog"))
             return;
         const dialog = document.createElement("dialog");
+        dialog.dataset.isFirstAccess = "true";
         dialog.classList.add("dialog");
         dialog.innerHTML = `
       <div class="dialog__header">
@@ -280,6 +281,7 @@ export class Calendar {
             .join("\n");
         inputYear.value = this._date.getFullYear().toString();
         dialog.showModal();
+        dialog.dataset.isFirstAccess = "false";
         dialog.addEventListener("click", (event) => {
             const rect = dialog.getBoundingClientRect();
             if (event.clientX < rect.left ||
