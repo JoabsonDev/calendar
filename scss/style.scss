@@ -3,3 +3,9 @@
 @import "./layout/layout";
 @import "./state/state";
 @import "./theme/theme";
+
+// reset necessario por causa de acessibilidade
+h1 {
+  opacity: 0;
+  font-size: 0;
+}
